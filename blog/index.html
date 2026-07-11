@@ -6,22 +6,26 @@
 <title>Writing — Waqar Ahmad</title>
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
-  .blog-page { max-width: 760px; margin: 0 auto; padding: 64px 24px 100px; }
+  .blog-page { max-width: 760px; margin: 0 auto; padding: 140px 24px 100px; }
   .blog-page h1 { font-size: 2rem; margin-bottom: 12px; }
   .blog-page > p { color: var(--text-dim); margin-bottom: 40px; }
   .post-list { display: flex; flex-direction: column; gap: 16px; }
   .post-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    border-radius: var(--radius);
     padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
   }
-  .post-card h3 { font-size: 1rem; }
+  .post-card:hover { border-color: var(--accent-2); transform: translateY(-2px); }
+  .post-card h3 { font-size: 1rem; font-weight: 500; }
   .post-card .date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint); white-space: nowrap; }
 </style>
 </head>
 <body>
+
+<div class="aurora-bg"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
 
 <header>
   <nav class="wrap">
@@ -44,7 +48,7 @@
 
   <div class="post-list">
     <!-- Add a post-card entry here for each new post, e.g.:
-    <a href="posts/my-first-post.html" class="post-card">
+    <a href="posts/my-first-post.html" class="post-card glass">
       <h3>Post Title</h3>
       <span class="date">Jan 2026</span>
     </a>
