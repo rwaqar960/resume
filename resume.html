@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume — Waqar Ahmad</title>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .resume-page { max-width: 820px; margin: 0 auto; padding: 48px 24px 100px; }
+  .resume-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+  .resume-header h1 { font-size: 1.8rem; margin-bottom: 4px; }
+  .resume-header .role { color: var(--accent); font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 10px; }
+  .resume-header .meta { color: var(--text-dim); font-size: 0.9rem; }
+  .resume-section { margin-top: 34px; }
+  .resume-section h2 {
+    font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--accent); border-bottom: 1px solid var(--border);
+    padding-bottom: 8px; margin-bottom: 16px;
+  }
+  .resume-section p { color: var(--text-dim); margin-bottom: 10px; }
+  .r-job { margin-bottom: 22px; }
+  .r-job .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
+  .r-job h3 { font-size: 1rem; }
+  .r-job .dates { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-faint); }
+  .r-job .context { font-size: 0.85rem; color: var(--text-faint); font-style: italic; margin-bottom: 8px; }
+  .r-job ul { margin-top: 6px; }
+  .r-job li { color: var(--text-dim); font-size: 0.92rem; padding-left: 16px; position: relative; margin-bottom: 6px; }
+  .r-job li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+  .r-project { margin-bottom: 16px; }
+  .r-project h3 { font-size: 0.98rem; }
+  .r-project .tech { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-2); }
+  .r-project p { margin-top: 4px; }
+
+  @media print {
+    header, footer, .resume-actions { display: none !important; }
+    body { background: #fff; color: #111; }
+    .resume-page { padding: 0; max-width: 100%; }
+    a { color: #111 !important; }
+    .resume-section h2 { color: #111; border-bottom-color: #ccc; }
+    .r-job .dates, .r-job .context, .resume-section p, .r-job li { color: #333; }
+    .r-project .tech { color: #444; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">waqar<span>.dev</span></a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="blog/index.html">Writing</a>
+      <a href="https://github.com/rwaqar960" target="_blank" rel="noopener">GitHub</a>
+      <a href="index.html#contact" class="btn solid">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<div class="resume-page">
+  <div class="resume-actions">
+    <a href="index.html" class="btn">&larr; Back to site</a>
+    <button class="btn solid" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="resume-header">
+    <h1>Waqar Ahmad</h1>
+    <div class="role">Senior Software Engineer · Team Lead · Mobile (Flutter) & AI Integration</div>
+    <div class="meta">rwaqar960@gmail.com &nbsp;·&nbsp; linkedin.com/in/waqarahmad-pk &nbsp;·&nbsp; Lahore, Pakistan &nbsp;·&nbsp; Open to Remote</div>
+  </div>
+
+  <div class="resume-section">
+    <h2>Summary</h2>
+    <p>Senior Software Engineer and Team Manager with 8+ years of production experience building cross-platform mobile applications, scalable backend systems, and LLM-powered AI features across healthcare, enterprise, and SaaS products. Leads a team of engineers end-to-end — owning architecture, delivery, and technical decisions — while staying deeply hands-on in Flutter mobile development and backend engineering (.NET/C# and beyond). Targeting senior / staff / engineering-lead remote roles with global tech companies.</p>
+  </div>
+
+  <div class="resume-section">
+    <h2>Technical Skills</h2>
+    <p><strong style="color:var(--text)">Mobile:</strong> Flutter (iOS & Android), Dart, Android (Kotlin/Java), React Native</p>
+    <p><strong style="color:var(--text)">Languages:</strong> Dart, C#, Java, Kotlin, TypeScript, JavaScript, SQL</p>
+    <p><strong style="color:var(--text)">Backend & Frameworks:</strong> .NET/ASP.NET Core, Spring Boot, Node/Express, Laravel/PHP, SignalR, Entity Framework, Angular</p>
+    <p><strong style="color:var(--text)">AI & LLM:</strong> OpenAI & Claude/Anthropic APIs, Prompt Engineering, RAG-style workflows, AI-powered feature development</p>
+    <p><strong style="color:var(--text)">Architecture:</strong> Microservices, REST APIs, Clean Architecture, CQRS, Event-Driven Design, DDD</p>
+    <p><strong style="color:var(--text)">Databases:</strong> SQL Server, MySQL, PostgreSQL, Redis</p>
+    <p><strong style="color:var(--text)">Leadership:</strong> Team management, mentorship, code review, system design, sprint & delivery planning</p>
+    <p><strong style="color:var(--text)">Tools & DevOps:</strong> Git, Docker, CI/CD, Azure, Postman, Swagger/OpenAPI</p>
+  </div>
+
+  <div class="resume-section">
+    <h2>Experience</h2>
+
+    <div class="r-job">
+      <div class="row"><h3>Senior Software Engineer → Team Manager · CDOXS</h3><span class="dates">May 2024 – Present</span></div>
+      <div class="context">Healthcare & AI platforms: MedChois, PrimaryCare, MyClinic, ClinixSummary.ai</div>
+      <ul>
+        <li>Lead and mentor a team of 3–4 engineers, owning sprint planning, delivery, and code quality — consistently shipping projects on schedule for over a year in a management capacity.</li>
+        <li>Drive architecture and technical decision-making across mobile (Flutter) and backend (.NET/C#), establishing standards adopted by the full engineering team.</li>
+        <li>Engineered ClinixSummary.ai — an AI-powered clinical documentation tool integrating LLM APIs — reducing documentation time per session by an estimated 70%.</li>
+        <li>Architected microservices-based backend systems for three production telemedicine platforms, enabling independent scaling of high-load components.</li>
+        <li>Delivered cross-platform Flutter mobile applications for iOS and Android from a shared codebase, plus Appointment Management and Training Management systems.</li>
+        <li>Integrated SignalR-based real-time communication into telemedicine workflows for live patient–provider interactions at production scale.</li>
+      </ul>
+    </div>
+
+    <div class="r-job">
+      <div class="row"><h3>Senior Software Engineer · Survival Tech Valley</h3><span class="dates">Jan 2021 – Apr 2024</span></div>
+      <ul>
+        <li>Led cross-platform mobile development using Flutter and React Native, shipping production applications to iOS and Android simultaneously from a shared codebase.</li>
+        <li>Designed and delivered scalable backend systems in .NET and Spring Boot (Java), serving high-concurrency workloads.</li>
+        <li>Architected RESTful API layers powering both mobile and web clients, reducing integration friction.</li>
+        <li>Optimized SQL Server and MySQL query performance under high load, cutting response times.</li>
+        <li>Contributed to architecture governance — design reviews, coding standards, tech-debt reduction.</li>
+      </ul>
+    </div>
+
+    <div class="r-job">
+      <div class="row"><h3>Software Developer · TechnologyBirds</h3><span class="dates">Feb 2018 – Jan 2021</span></div>
+      <ul>
+        <li>Built and maintained production backend services and Android applications (Java/Kotlin), supporting thousands of concurrent users.</li>
+        <li>Designed and implemented API layers integrating backend services with mobile clients.</li>
+        <li>Improved system performance through database query optimization and backend refactoring.</li>
+      </ul>
+    </div>
+
+    <div class="r-job">
+      <div class="row"><h3>Software Developer · Gosafe Company Limited</h3><span class="dates">Oct 2016 – Feb 2018</span></div>
+      <ul>
+        <li>Developed Android applications and Java backend components for early-stage systems.</li>
+        <li>Built REST APIs supporting mobile applications, laying integration foundations later scaled in subsequent product phases.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2>Notable Projects</h2>
+    <div class="r-project">
+      <h3>ClinixSummary.ai — AI Clinical Documentation Platform</h3>
+      <span class="tech">.NET/C#, LLM APIs, ASP.NET Core, SQL Server</span>
+      <p>Auto-generates structured clinical notes from patient–provider sessions using LLM integration, reducing documentation time by ~70%.</p>
+    </div>
+    <div class="r-project">
+      <h3>Discipline-Driven Learning Platform (DDLP)</h3>
+      <span class="tech">Flutter, Laravel, REST APIs, MySQL</span>
+      <p>Lead Engineer & Solution Architect — SRS, System Architecture Document, and Scope of Work; full-stack architecture and end-to-end delivery.</p>
+    </div>
+    <div class="r-project">
+      <h3>Telemedicine Suite — MedChois / PrimaryCare / MyClinic</h3>
+      <span class="tech">ASP.NET Core, Flutter, SignalR, SQL Server</span>
+      <p>Microservices backend architecture and real-time communication layer for three live telemedicine platforms.</p>
+    </div>
+    <div class="r-project">
+      <h3>NewsLink.pk — Multilingual News Aggregator</h3>
+      <span class="tech">PHP (CodeIgniter), Java, Android</span>
+      <p>Urdu-language news aggregation platform — web frontend, Java crawler, and Android app as a final-year capstone.</p>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2>Education</h2>
+    <p><strong style="color:var(--text)">Bachelor of Science, Computer Science</strong> — University of the Punjab, Lahore · 2012 – 2016</p>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
