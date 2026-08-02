@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume — Waqar Ahmad</title>
+<title>Resume — Waqar Ahmad · Lead Mobile Engineer</title>
+<meta name="description" content="Waqar Ahmad — Lead Mobile Engineer. Flutter, native platform engineering, and applied AI in regulated healthcare.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,8 +14,10 @@
   .resume-card { padding: 48px; }
   .resume-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
   .resume-header h1 { font-size: 1.8rem; margin-bottom: 4px; }
-  .resume-header .role { color: var(--accent); font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 10px; }
-  .resume-header .meta { color: var(--text-dim); font-size: 0.9rem; }
+  .resume-header .role { color: var(--accent); font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 12px; }
+  .resume-header .pitch { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px; }
+  .resume-header .meta { color: var(--text-faint); font-size: 0.85rem; line-height: 1.7; }
+  .resume-header .meta a { color: var(--text-dim); }
   .resume-section { margin-top: 34px; }
   .resume-section h2 {
     font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase;
@@ -30,20 +33,59 @@
   .r-job ul { margin-top: 6px; }
   .r-job li { color: var(--text-dim); font-size: 0.92rem; padding-left: 16px; position: relative; margin-bottom: 6px; }
   .r-job li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
-  .r-project { margin-bottom: 16px; }
-  .r-project h3 { font-size: 0.98rem; }
-  .r-project .tech { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-2); }
-  .r-project p { margin-top: 4px; }
+
+  /* Selected Work — flagship items, sits above the chronology */
+  .r-work { margin-bottom: 26px; }
+  .r-work .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; align-items: baseline; }
+  .r-work h3 { font-size: 1rem; }
+  .r-work .tech { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-2); display: block; margin: 3px 0 8px; }
+  .r-work .links { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint); }
+  .r-work ul { margin-top: 6px; }
+  .r-work li { color: var(--text-dim); font-size: 0.92rem; padding-left: 16px; position: relative; margin-bottom: 6px; }
+  .r-work li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+
+  /* Tiered skills */
+  .skill-tier { display: grid; grid-template-columns: 92px 1fr; gap: 10px 16px; margin-bottom: 12px; align-items: start; }
+  .skill-tier .tier {
+    font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--accent-2); padding-top: 2px;
+  }
+  .skill-tier .items { color: var(--text-dim); font-size: 0.92rem; line-height: 1.6; }
+  @media (max-width: 560px) { .skill-tier { grid-template-columns: 1fr; gap: 2px; } }
+
+  /* UNFILLED DATA — deliberately loud so this can never ship by accident.
+     Every one of these must be replaced with a real number before sending. */
+  .needs-data {
+    background: rgba(255, 176, 32, 0.16);
+    border-bottom: 1px dashed rgba(255, 176, 32, 0.85);
+    color: #ffcf72;
+    padding: 0 3px;
+    border-radius: 2px;
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+  }
+  .draft-banner {
+    background: rgba(255, 176, 32, 0.12);
+    border: 1px solid rgba(255, 176, 32, 0.45);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    color: #ffcf72;
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
 
   @media print {
-    header, footer, .resume-actions { display: none !important; }
+    header, footer, .resume-actions, .draft-banner { display: none !important; }
     body { background: #fff; color: #111; }
     .resume-page { padding: 0; max-width: 100%; }
     .resume-card { background: none; border: none; backdrop-filter: none; padding: 0; }
     a { color: #111 !important; }
     .resume-section h2 { color: #111; border-bottom-color: #ccc; }
-    .r-job .dates, .r-job .context, .resume-section p, .r-job li { color: #333; }
-    .r-project .tech { color: #444; }
+    .r-job .dates, .r-job .context, .resume-section p, .r-job li, .r-work li, .skill-tier .items { color: #333; }
+    .r-work .tech, .r-work .links, .skill-tier .tier { color: #444; }
+    /* Placeholders stay loud in print too — printing a CV with holes in it is worse than not printing. */
+    .needs-data { background: #ffe9b0 !important; color: #7a4a00 !important; border-bottom: 1px dashed #7a4a00; }
   }
 </style>
 </head>
@@ -56,7 +98,6 @@
       <a href="index.html#about">About</a>
       <a href="index.html#experience">Experience</a>
       <a href="index.html#projects">Projects</a>
-      <a href="blog/index.html">Writing</a>
       <a href="https://github.com/rwaqar960" target="_blank" rel="noopener">GitHub</a>
       <a href="index.html#contact" class="btn solid">Contact</a>
     </div>
@@ -69,30 +110,86 @@
     <button class="btn solid" onclick="window.print()">Print / Save as PDF</button>
   </div>
 
+  <div class="draft-banner">
+    <strong>DRAFT — not ready to send.</strong> Every <span class="needs-data">highlighted</span> value is a
+    placeholder awaiting a real number. Replace them all, then delete this banner and the
+    <code>.draft-banner</code> / <code>.needs-data</code> CSS rules.
+  </div>
+
   <div class="resume-card glass">
   <div class="resume-header">
     <h1>Waqar Ahmad</h1>
-    <div class="role">Senior Software Engineer · Engineering Lead · Mobile (Flutter, Android) & AI Integration</div>
-    <div class="meta">rwaqar960@gmail.com &nbsp;·&nbsp; linkedin.com/in/waqar-ahmad-pk &nbsp;·&nbsp; Lahore, Pakistan &nbsp;·&nbsp; Open to Remote</div>
+    <div class="role">Lead Mobile Engineer — Flutter · Healthcare · Applied AI</div>
+    <p class="pitch">
+      Eight years shipping production mobile software. Built the LLM pipeline behind ClinixSummary.ai and the
+      native scanning engines behind ScanLeap. Currently technical lead for mobile across four healthcare
+      products at CDOXS, leading 3–4 engineers while owning the Flutter codebase.
+    </p>
+    <div class="meta">
+      <a href="mailto:rwaqar960@gmail.com">rwaqar960@gmail.com</a> &nbsp;·&nbsp;
+      <a href="https://github.com/rwaqar960" target="_blank" rel="noopener">github.com/rwaqar960</a> &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/waqar-ahmad-pk/" target="_blank" rel="noopener">linkedin.com/in/waqar-ahmad-pk</a><br>
+      Lahore, Pakistan · UTC+5 — full afternoon overlap with EU and UK working hours
+    </div>
   </div>
 
   <div class="resume-section">
-    <h2>Summary</h2>
-    <p>Senior Software Engineer, Engineering Lead, and Mobile Architect with 8+ years of experience designing and delivering scalable mobile and backend systems across healthcare, enterprise, and SaaS platforms. Experienced in Software Architecture, Technical Leadership, SDLC, Agile/Scrum Delivery, System Design, Cross-functional Collaboration, Stakeholder Management, Mobile Application Development, AI Integration, Cloud-native Applications, and Engineering Management. Hands-on expert in Flutter, .NET, distributed systems, and LLM-powered applications.</p>
-  </div>
+    <h2>Selected Work</h2>
 
-  <div class="resume-section">
-    <h2>Technical Skills</h2>
-    <p><strong style="color:var(--text)">Mobile:</strong> Flutter (iOS & Android), Dart, Android (Kotlin/Java), Swift (iOS native), React Native</p>
-    <p><strong style="color:var(--text)">Languages:</strong> Dart, C#, Java, Kotlin, Swift, TypeScript, JavaScript, Python, SQL</p>
-    <p><strong style="color:var(--text)">Backend & Frameworks:</strong> .NET/ASP.NET Core, Spring Boot, Node/Express, Laravel/PHP, SignalR, Entity Framework, Angular</p>
-    <p><strong style="color:var(--text)">AI & LLM:</strong> OpenAI & Claude/Anthropic APIs, Prompt Engineering, RAG-style workflows, AI-powered feature development, OCR & Computer Vision</p>
-    <p><strong style="color:var(--text)">Cloud:</strong> AWS, Azure DevOps</p>
-    <p><strong style="color:var(--text)">Architecture:</strong> Microservices, REST APIs, Clean Architecture, CQRS, Event-Driven Architecture, System Design, Scalable Systems, Performance Optimization</p>
-    <p><strong style="color:var(--text)">Databases:</strong> SQL Server, MySQL, PostgreSQL, Redis</p>
-    <p><strong style="color:var(--text)">Leadership:</strong> Team management, mentorship, code review, architecture reviews,system design, sprint & delivery planning</p>
-    <p><strong style="color:var(--text)">Methodologies:</strong> Agile, Scrum, SDLC, Test-Driven Development (TDD), Object-Oriented Design (OOD), SOLID Principles, Continuous Integration, Continuous Delivery, DevOps Practices</p>
-    <p><strong style="color:var(--text)">Tools & DevOps:</strong> Git, GitHub, Azure DevOps, CI/CD Pipelines, Docker, Containerization, Postman, Swagger/OpenAPI, Build Automation, Release Management</p>
+    <div class="r-work">
+      <div class="row">
+        <h3>ClinixSummary.ai — LLM Clinical Documentation</h3>
+      </div>
+      <span class="tech">Flutter · .NET / ASP.NET Core · OpenAI &amp; Claude APIs · SQL Server</span>
+      <ul>
+        <li>Owned the pipeline end to end — in-app audio capture in Flutter, through transcription and structured
+            clinical extraction, to the clinician review-and-sign-off UI.</li>
+        <li>Cut documentation time from <span class="needs-data">[X]</span> to
+            <span class="needs-data">[Y]</span> minutes per session (~70%) across
+            <span class="needs-data">[N]</span> clinicians at <span class="needs-data">[M]</span> practices.</li>
+        <li>Built the evaluation harness that gated every prompt and model change —
+            <span class="needs-data">[N]</span> labelled sessions, with releases blocked on regression in
+            <span class="needs-data">[which failure mode]</span>.</li>
+        <li>Designed for a setting where a hallucinated line is a patient-safety event rather than a bug:
+            <span class="needs-data">[the actual mechanism — mandatory clinician sign-off / source-span citation /
+            confidence gating]</span>.</li>
+        <li>Reduced cost per generated note by <span class="needs-data">[Z]</span>% via
+            <span class="needs-data">[caching / model routing / prompt compression]</span>.</li>
+      </ul>
+    </div>
+
+    <div class="r-work">
+      <div class="row">
+        <h3>ScanLeap — Document Scanner</h3>
+        <span class="links">Sole developer</span>
+      </div>
+      <span class="tech">Flutter · Kotlin (Android) · Swift (iOS) · on-device OCR</span>
+      <ul>
+        <li>Wrote the capture and filter engines natively on both platforms behind a single Dart interface — edge
+            detection, perspective correction, image filtering — after no existing plugin met the accuracy bar.</li>
+        <li><span class="needs-data">[X]</span>% edge-detection accuracy across
+            <span class="needs-data">[N]</span> test documents; <span class="needs-data">[Y]</span> ms per page;
+            fully offline.</li>
+        <li>AES-256 encryption at rest for scanned documents.</li>
+        <li>Live on Google Play — <span class="needs-data">[STORE LINK]</span> ·
+            <span class="needs-data">[rating]</span> from <span class="needs-data">[N]</span> reviews ·
+            <span class="needs-data">[downloads]</span>. iOS in final release.</li>
+      </ul>
+    </div>
+
+    <div class="r-work">
+      <div class="row">
+        <h3>Telemedicine Suite — MedChois · PrimaryCare · MyClinic</h3>
+      </div>
+      <span class="tech">ASP.NET Core · Microservices · SignalR · SQL Server · Flutter</span>
+      <ul>
+        <li>Designed the microservices backend and SignalR real-time layer behind three live telemedicine
+            platforms, letting consultation and media services scale independently of the core API.</li>
+        <li><span class="needs-data">[N]</span> concurrent consultations at peak ·
+            <span class="needs-data">[uptime]</span>% availability ·
+            p95 <span class="needs-data">[X]</span> ms.</li>
+      </ul>
+    </div>
   </div>
 
   <div class="resume-section">
@@ -100,81 +197,75 @@
 
     <div class="r-job">
       <div class="row"><h3>Senior Software Engineer → Team Manager · CDOXS</h3><span class="dates">May 2024 – Present</span></div>
-      <div class="context">Healthcare & AI platforms: MedChois, PrimaryCare, MyClinic, ClinixSummary.ai</div>
+      <div class="context">Technical lead for mobile across four healthcare products — MedChois, PrimaryCare, MyClinic, ClinixSummary.ai</div>
       <ul>
-        <li>Led engineering delivery across Flutter, .NET, and AI systems while managing sprint planning, code reviews, technical architecture, and stakeholder communication.</li>
-        <li>Drove Software Architecture, System Design, Solution Architecture, and technical decision-making across mobile and backend systems while establishing engineering standards, coding guidelines, and architectural best practices.</li>
-        <li>Engineered ClinixSummary.ai — an AI-powered clinical documentation tool integrating LLM APIs — reducing documentation time per session by an estimated 70%.</li>
-        <li>Designed prompt orchestration, context retrieval, and structured clinical documentation workflows using LLM APIs.</li>
-        <li>Built the ClinixSummary.ai companion Android and iOS applications end to end (Flutter), extending the AI documentation platform to mobile clinicians.</li>
-        <li>Built ScanLeap, an AI-powered document scanner app (Flutter shell with native Kotlin/Swift scan & filter engines) — smart edge detection, OCR text extraction, cloud sync, and 256-bit encryption; Android live, iOS in final release phase.</li>
-        <li>Architected microservices-based backend systems for three production telemedicine platforms, enabling independent scaling of high-load components.</li>
-        <li>Delivered cross-platform Flutter mobile applications for iOS and Android from a shared codebase, plus Appointment Management and Training Management systems.</li>
-        <li>Integrated SignalR-based real-time communication into telemedicine workflows for live patient–provider interactions at production scale.</li>
+        <li>Lead 3–4 engineers while personally owning delivery of the Flutter codebase — set mobile architecture,
+            review standards, and release process. <span class="needs-data">[N]</span> releases to iOS and Android,
+            <span class="needs-data">[X]</span>% crash-free sessions,
+            <span class="needs-data">[rating]</span> across <span class="needs-data">[N]</span> store reviews.</li>
+        <li>Own architecture and technical decisions across mobile and backend; established the engineering
+            standards now used by the full team.</li>
+        <li>Shipped ClinixSummary.ai and ScanLeap end to end, including both companion mobile apps — see
+            Selected Work above.</li>
+        <li>Integrated SignalR real-time communication into live patient–provider consultation flows at
+            production scale.</li>
+        <li>Delivered Appointment Management and Training Management systems on the shared Flutter codebase.</li>
+        <li><span class="needs-data">[MENTORSHIP — one concrete outcome: an engineer who grew or was promoted,
+            onboarding time reduced, or a component successfully handed off and still owned by someone else]</span></li>
       </ul>
     </div>
 
     <div class="r-job">
       <div class="row"><h3>Senior Software Engineer · Survival Tech Valley</h3><span class="dates">Jan 2021 – Apr 2024</span></div>
       <ul>
-        <li>Led cross-platform mobile development using Flutter and React Native, shipping production applications to iOS and Android simultaneously from a shared codebase.</li>
-        <li>Designed and delivered scalable backend systems in .NET and Spring Boot (Java), serving high-concurrency workloads.</li>
-        <li>Architected RESTful API layers powering both mobile and web clients, reducing integration friction.</li>
-        <li>Optimized SQL Server and MySQL query performance under high load, cutting response times.</li>
-        <li>Contributed to architecture governance — design reviews, coding standards, tech-debt reduction.</li>
+        <li>Led cross-platform mobile delivery in Flutter and React Native, shipping
+            <span class="needs-data">[N]</span> production apps to iOS and Android from shared codebases.</li>
+        <li>Built backend systems in .NET and Spring Boot serving
+            <span class="needs-data">[N]</span> requests/day at
+            <span class="needs-data">[X]</span> ms p95.</li>
+        <li>Cut SQL Server and MySQL query times from <span class="needs-data">[X]</span> to
+            <span class="needs-data">[Y]</span> ms under peak load through indexing and query restructuring.</li>
+        <li>Ran design reviews and coding standards across multiple active codebases.</li>
       </ul>
     </div>
 
     <div class="r-job">
       <div class="row"><h3>Software Developer · TechnologyBirds</h3><span class="dates">Feb 2018 – Jan 2021</span></div>
       <ul>
-        <li>Built and maintained production backend services and Android applications (Java/Kotlin), supporting thousands of concurrent users.</li>
-        <li>Designed and implemented API layers integrating backend services with mobile clients.</li>
-        <li>Improved system performance through database query optimization and backend refactoring.</li>
+        <li>Backend services and Android applications in Java and Kotlin, supporting
+            <span class="needs-data">[N]</span> concurrent users; designed the API layer between backend and
+            mobile clients.</li>
       </ul>
     </div>
 
     <div class="r-job">
       <div class="row"><h3>Software Developer · Gosafe Company Limited</h3><span class="dates">Oct 2016 – Feb 2018</span></div>
       <ul>
-        <li>Developed Android applications and Java backend components for early-stage systems.</li>
-        <li>Built REST APIs supporting mobile applications, laying integration foundations later scaled in subsequent product phases.</li>
+        <li>Android applications and Java backend components, including the REST API layer for early-stage
+            mobile products.</li>
       </ul>
     </div>
   </div>
 
   <div class="resume-section">
-    <h2>Notable Projects</h2>
-    <div class="r-project">
-      <h3>ClinixSummary.ai — AI Clinical Documentation Platform</h3>
-      <span class="tech">.NET/C#, LLM APIs, ASP.NET Core, SQL Server, Flutter</span>
-      <p>Auto-generates structured clinical notes from patient–provider sessions using LLM integration, reducing documentation time by ~70%. Includes companion Android and iOS apps built end to end.</p>
+    <h2>Technical Skills</h2>
+    <div class="skill-tier">
+      <div class="tier">Expert</div>
+      <div class="items">Flutter &amp; Dart · Kotlin · Swift · platform channels and native module development · mobile architecture and release engineering</div>
     </div>
-    <div class="r-project">
-      <h3>ScanLeap — AI Document Scanner</h3>
-      <span class="tech">Flutter, Kotlin, Swift, OCR, Cloud Sync</span>
-      <p>Mobile scanner app with AI-powered edge detection, OCR text extraction, cloud sync, and 256-bit encryption. Flutter shell with native Kotlin/Swift scan and filter engines; Android live, iOS in final release phase.</p>
+    <div class="skill-tier">
+      <div class="tier">Strong</div>
+      <div class="items">.NET / ASP.NET Core · SQL Server · REST &amp; SignalR · LLM integration, evaluation and cost control · microservices · CI/CD</div>
     </div>
-    <div class="r-project">
-      <h3>Discipline-Driven Learning Platform (DDLP)</h3>
-      <span class="tech">Flutter, Laravel, REST APIs, MySQL</span>
-      <p>Lead Engineer & Solution Architect — SRS, System Architecture Document, and Scope of Work; full-stack architecture and end-to-end delivery.</p>
-    </div>
-    <div class="r-project">
-      <h3>Telemedicine Suite — MedChois / PrimaryCare / MyClinic</h3>
-      <span class="tech">ASP.NET Core, Flutter, SignalR, SQL Server</span>
-      <p>Microservices backend architecture and real-time communication layer for three live telemedicine platforms.</p>
-    </div>
-    <div class="r-project">
-      <h3>NewsLink.pk — Multilingual News Aggregator</h3>
-      <span class="tech">PHP (CodeIgniter), Java, Android</span>
-      <p>Urdu-language news aggregation platform — web frontend, Java crawler, and Android app as a final-year capstone.</p>
+    <div class="skill-tier">
+      <div class="tier">Working</div>
+      <div class="items">TypeScript · Python · PostgreSQL · Docker · Azure · AWS</div>
     </div>
   </div>
 
   <div class="resume-section">
     <h2>Education</h2>
-    <p><strong style="color:var(--text)">Bachelor of Science, Computer Science</strong> — University of the Punjab, Lahore · 2012 – 2016</p>
+    <p><strong style="color:var(--text)">BSc Computer Science</strong> — University of the Punjab, Lahore · 2012 – 2016</p>
   </div>
   </div>
 </div>
