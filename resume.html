@@ -53,30 +53,8 @@
   .skill-tier .items { color: var(--text-dim); font-size: 0.92rem; line-height: 1.6; }
   @media (max-width: 560px) { .skill-tier { grid-template-columns: 1fr; gap: 2px; } }
 
-  /* UNFILLED DATA — deliberately loud so this can never ship by accident.
-     Every one of these must be replaced with a real number before sending. */
-  .needs-data {
-    background: rgba(255, 176, 32, 0.16);
-    border-bottom: 1px dashed rgba(255, 176, 32, 0.85);
-    color: #ffcf72;
-    padding: 0 3px;
-    border-radius: 2px;
-    font-family: var(--font-mono);
-    font-size: 0.86em;
-  }
-  .draft-banner {
-    background: rgba(255, 176, 32, 0.12);
-    border: 1px solid rgba(255, 176, 32, 0.45);
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 24px;
-    color: #ffcf72;
-    font-size: 0.86rem;
-    line-height: 1.6;
-  }
-
   @media print {
-    header, footer, .resume-actions, .draft-banner { display: none !important; }
+    header, footer, .resume-actions { display: none !important; }
     body { background: #fff; color: #111; }
     .resume-page { padding: 0; max-width: 100%; }
     .resume-card { background: none; border: none; backdrop-filter: none; padding: 0; }
@@ -84,8 +62,6 @@
     .resume-section h2 { color: #111; border-bottom-color: #ccc; }
     .r-job .dates, .r-job .context, .resume-section p, .r-job li, .r-work li, .skill-tier .items { color: #333; }
     .r-work .tech, .r-work .links, .skill-tier .tier { color: #444; }
-    /* Placeholders stay loud in print too — printing a CV with holes in it is worse than not printing. */
-    .needs-data { background: #ffe9b0 !important; color: #7a4a00 !important; border-bottom: 1px dashed #7a4a00; }
   }
 </style>
 </head>
@@ -108,12 +84,6 @@
   <div class="resume-actions">
     <a href="index.html" class="btn">&larr; Back to site</a>
     <button class="btn solid" onclick="window.print()">Print / Save as PDF</button>
-  </div>
-
-  <div class="draft-banner">
-    <strong>DRAFT — not ready to send.</strong> Every <span class="needs-data">highlighted</span> value is a
-    placeholder awaiting a real number. Replace them all, then delete this banner and the
-    <code>.draft-banner</code> / <code>.needs-data</code> CSS rules.
   </div>
 
   <div class="resume-card glass">
@@ -144,17 +114,11 @@
       <ul>
         <li>Owned the pipeline end to end — in-app audio capture in Flutter, through transcription and structured
             clinical extraction, to the clinician review-and-sign-off UI.</li>
-        <li>Cut documentation time from <span class="needs-data">[X]</span> to
-            <span class="needs-data">[Y]</span> minutes per session (~70%) across
-            <span class="needs-data">[N]</span> clinicians at <span class="needs-data">[M]</span> practices.</li>
-        <li>Built the evaluation harness that gated every prompt and model change —
-            <span class="needs-data">[N]</span> labelled sessions, with releases blocked on regression in
-            <span class="needs-data">[which failure mode]</span>.</li>
-        <li>Designed for a setting where a hallucinated line is a patient-safety event rather than a bug:
-            <span class="needs-data">[the actual mechanism — mandatory clinician sign-off / source-span citation /
-            confidence gating]</span>.</li>
-        <li>Reduced cost per generated note by <span class="needs-data">[Z]</span>% via
-            <span class="needs-data">[caching / model routing / prompt compression]</span>.</li>
+        <li>Cut clinician documentation time by ~70%, measured from product analytics on writing time per
+            session.</li>
+        <li>In active use by 100+ clinicians.</li>
+        <li>Built the companion Android and iOS apps, extending the platform to clinicians working away from
+            a desk.</li>
       </ul>
     </div>
 
@@ -165,15 +129,14 @@
       </div>
       <span class="tech">Flutter · Kotlin (Android) · Swift (iOS) · on-device OCR</span>
       <ul>
-        <li>Wrote the capture and filter engines natively on both platforms behind a single Dart interface — edge
-            detection, perspective correction, image filtering — after no existing plugin met the accuracy bar.</li>
-        <li><span class="needs-data">[X]</span>% edge-detection accuracy across
-            <span class="needs-data">[N]</span> test documents; <span class="needs-data">[Y]</span> ms per page;
-            fully offline.</li>
-        <li>AES-256 encryption at rest for scanned documents.</li>
-        <li>Live on Google Play — <span class="needs-data">[STORE LINK]</span> ·
-            <span class="needs-data">[rating]</span> from <span class="needs-data">[N]</span> reviews ·
-            <span class="needs-data">[downloads]</span>. iOS in final release.</li>
+        <li>Wrote the capture and filter engines natively on both platforms behind a single Dart interface —
+            edge detection, perspective correction, image filtering — after no existing plugin met the
+            accuracy bar.</li>
+        <li>On-device OCR and AES-256 encryption at rest; documents never leave the device unencrypted.</li>
+        <li>Live on Google Play —
+            <a href="https://play.google.com/store/apps/details?id=com.scanner.scanleap.scanleap_flutter"
+               target="_blank" rel="noopener">play.google.com/store/apps/details?id=com.scanner.scanleap.scanleap_flutter</a>.
+            iOS build in progress.</li>
       </ul>
     </div>
 
@@ -185,9 +148,8 @@
       <ul>
         <li>Designed the microservices backend and SignalR real-time layer behind three live telemedicine
             platforms, letting consultation and media services scale independently of the core API.</li>
-        <li><span class="needs-data">[N]</span> concurrent consultations at peak ·
-            <span class="needs-data">[uptime]</span>% availability ·
-            p95 <span class="needs-data">[X]</span> ms.</li>
+        <li>Built the shared mobile components these products run on — audio/video calling, chat, document
+            detection and image filters — written once and reused across the suite.</li>
       </ul>
     </div>
   </div>
@@ -199,42 +161,41 @@
       <div class="row"><h3>Senior Software Engineer → Team Manager · CDOXS</h3><span class="dates">May 2024 – Present</span></div>
       <div class="context">Technical lead for mobile across four healthcare products — MedChois, PrimaryCare, MyClinic, ClinixSummary.ai</div>
       <ul>
-        <li>Lead 3–4 engineers while personally owning delivery of the Flutter codebase — set mobile architecture,
-            review standards, and release process. <span class="needs-data">[N]</span> releases to iOS and Android,
-            <span class="needs-data">[X]</span>% crash-free sessions,
-            <span class="needs-data">[rating]</span> across <span class="needs-data">[N]</span> store reviews.</li>
+        <li>Lead 3–4 engineers while personally owning delivery of the Flutter codebase — set mobile
+            architecture, review standards, and release process.</li>
+        <li>Mentored two engineers through promotion.</li>
+        <li>Built the reusable components the team now builds on — audio/video call integration, chat,
+            document detection models, and image filters — written once and shipped across multiple
+            products.</li>
+        <li>Introduced the delivery process now used on every major project: SOPs, daily standups, progress
+            tracking, QA and evaluation pipelines, and per-project CI/CD.</li>
         <li>Own architecture and technical decisions across mobile and backend; established the engineering
-            standards now used by the full team.</li>
+            standards used by the full team.</li>
         <li>Shipped ClinixSummary.ai and ScanLeap end to end, including both companion mobile apps — see
             Selected Work above.</li>
         <li>Integrated SignalR real-time communication into live patient–provider consultation flows at
             production scale.</li>
-        <li>Delivered Appointment Management and Training Management systems on the shared Flutter codebase.</li>
-        <li><span class="needs-data">[MENTORSHIP — one concrete outcome: an engineer who grew or was promoted,
-            onboarding time reduced, or a component successfully handed off and still owned by someone else]</span></li>
       </ul>
     </div>
 
     <div class="r-job">
       <div class="row"><h3>Senior Software Engineer · Survival Tech Valley</h3><span class="dates">Jan 2021 – Apr 2024</span></div>
       <ul>
-        <li>Led cross-platform mobile delivery in Flutter and React Native, shipping
-            <span class="needs-data">[N]</span> production apps to iOS and Android from shared codebases.</li>
-        <li>Built backend systems in .NET and Spring Boot serving
-            <span class="needs-data">[N]</span> requests/day at
-            <span class="needs-data">[X]</span> ms p95.</li>
-        <li>Cut SQL Server and MySQL query times from <span class="needs-data">[X]</span> to
-            <span class="needs-data">[Y]</span> ms under peak load through indexing and query restructuring.</li>
-        <li>Ran design reviews and coding standards across multiple active codebases.</li>
+        <li>Led cross-platform mobile delivery in Flutter and React Native, shipping production apps to iOS
+            and Android from shared codebases.</li>
+        <li>Built backend systems in .NET and Spring Boot serving high-concurrency workloads.</li>
+        <li>Optimized SQL Server and MySQL query performance under peak load through indexing and query
+            restructuring.</li>
+        <li>Lead engineer and solution architect on DDLP, a cross-platform learning platform — sole technical
+            authority for the SRS, architecture document, and end-to-end delivery.</li>
       </ul>
     </div>
 
     <div class="r-job">
       <div class="row"><h3>Software Developer · TechnologyBirds</h3><span class="dates">Feb 2018 – Jan 2021</span></div>
       <ul>
-        <li>Backend services and Android applications in Java and Kotlin, supporting
-            <span class="needs-data">[N]</span> concurrent users; designed the API layer between backend and
-            mobile clients.</li>
+        <li>Backend services and Android applications in Java and Kotlin; designed the API layer between
+            backend services and mobile clients.</li>
       </ul>
     </div>
 
@@ -255,7 +216,7 @@
     </div>
     <div class="skill-tier">
       <div class="tier">Strong</div>
-      <div class="items">.NET / ASP.NET Core · SQL Server · REST &amp; SignalR · LLM integration, evaluation and cost control · microservices · CI/CD</div>
+      <div class="items">.NET / ASP.NET Core · SQL Server · REST &amp; SignalR · LLM integration · microservices · CI/CD</div>
     </div>
     <div class="skill-tier">
       <div class="tier">Working</div>

@@ -11,36 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-  /* ---------------------------------------------------------------
-     DRAFT SCAFFOLDING — delete this whole block, the .draft-banner
-     div, and every <span class="needs-data"> once the numbers from
-     docs/03-metrics-worksheet.md are filled in.
-     Deliberately loud so this can never ship half-finished.
-     --------------------------------------------------------------- */
-  .needs-data {
-    background: rgba(255, 176, 32, 0.16);
-    border-bottom: 1px dashed rgba(255, 176, 32, 0.85);
-    color: #ffcf72;
-    padding: 0 3px;
-    border-radius: 2px;
-    font-family: var(--font-mono);
-    font-size: 0.86em;
-  }
-  .draft-banner {
-    position: relative;
-    z-index: 50;
-    max-width: 1100px;
-    margin: 90px auto 0;
-    background: rgba(255, 176, 32, 0.12);
-    border: 1px solid rgba(255, 176, 32, 0.45);
-    border-radius: 8px;
-    padding: 12px 16px;
-    color: #ffcf72;
-    font-size: 0.86rem;
-    line-height: 1.6;
-  }
-  /* --------------------------------------------------------------- */
-
   .skill-tier-label {
     font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase;
     letter-spacing: 0.08em; color: var(--accent-2); margin-bottom: 10px; display: block;
@@ -66,12 +36,6 @@
     </div>
   </nav>
 </header>
-
-<div class="draft-banner">
-  <strong>DRAFT — not deployed.</strong> Every <span class="needs-data">highlighted</span> value is a
-  placeholder awaiting a real number from <code>docs/03-metrics-worksheet.md</code>. Fill them all, then
-  delete this banner and the draft CSS block in <code>&lt;head&gt;</code>.
-</div>
 
 <main>
 
@@ -126,15 +90,16 @@
           note is a safety event, not a bug.
         </p>
         <p>
-          That second problem is the one I find most interesting right now: how you evaluate, gate, and
-          cost-control LLM output when being wrong actually matters.
+          The parts I'm most proud of are the ones the team kept using after I moved on: the shared calling,
+          chat, and document-detection components, and the delivery process now running on every major
+          project.
         </p>
       </div>
       <div class="fact-list">
         <div class="fact glass"><div class="k">Based in</div><div class="v">Lahore, Pakistan · UTC+5 — full afternoon overlap with EU &amp; UK hours</div></div>
         <div class="fact glass"><div class="k">Experience</div><div class="v">8 years, production software</div></div>
         <div class="fact glass"><div class="k">Currently</div><div class="v">Technical lead for mobile, CDOXS</div></div>
-        <div class="fact glass"><div class="k">Shipped</div><div class="v">Live on Google Play — <span class="needs-data">[ScanLeap rating / installs]</span></div></div>
+        <div class="fact glass"><div class="k">Shipped</div><div class="v"><a href="https://play.google.com/store/apps/details?id=com.scanner.scanleap.scanleap_flutter" target="_blank" rel="noopener">ScanLeap on Google Play</a></div></div>
       </div>
     </div>
   </section>
@@ -168,7 +133,6 @@
             <span class="chip">REST &amp; SignalR</span>
             <span class="chip">Microservices</span>
             <span class="chip">LLM integration</span>
-            <span class="chip">Evaluation &amp; cost control</span>
             <span class="chip">CI/CD</span>
           </div>
           <p class="tier-note">Production systems behind three live telemedicine platforms and an LLM documentation pipeline.</p>
@@ -205,12 +169,13 @@
           </div>
           <div class="context">Technical lead for mobile across four healthcare products — MedChois, PrimaryCare, MyClinic, ClinixSummary.ai</div>
           <ul>
-            <li>Lead 3–4 engineers while personally owning delivery of the Flutter codebase — set mobile architecture, review standards, and release process. <span class="needs-data">[N]</span> releases to iOS and Android, <span class="needs-data">[X]</span>% crash-free sessions.</li>
-            <li>Own architecture and technical decisions across mobile and backend; established the engineering standards now used by the full team.</li>
+            <li>Lead 3–4 engineers while personally owning delivery of the Flutter codebase — set mobile architecture, review standards, and release process.</li>
+            <li>Mentored two engineers through promotion.</li>
+            <li>Built the reusable components the team now builds on — audio/video call integration, chat, document detection models, and image filters — written once and shipped across multiple products.</li>
+            <li>Introduced the delivery process now used on every major project: SOPs, daily standups, progress tracking, QA and evaluation pipelines, and per-project CI/CD.</li>
+            <li>Own architecture and technical decisions across mobile and backend; established the engineering standards used by the full team.</li>
             <li>Shipped ClinixSummary.ai and ScanLeap end to end, including both companion mobile apps.</li>
             <li>Integrated SignalR real-time communication into live patient–provider consultation flows at production scale.</li>
-            <li>Delivered Appointment Management and Training Management systems on the shared Flutter codebase.</li>
-            <li><span class="needs-data">[MENTORSHIP — one concrete outcome: an engineer who grew or was promoted, onboarding time reduced, or a component handed off and still owned by someone else]</span></li>
           </ul>
         </div>
 
@@ -220,9 +185,9 @@
             <span class="dates">Jan 2021 – Apr 2024</span>
           </div>
           <ul>
-            <li>Led cross-platform mobile delivery in Flutter and React Native, shipping <span class="needs-data">[N]</span> production apps to iOS and Android from shared codebases.</li>
-            <li>Built backend systems in .NET and Spring Boot serving <span class="needs-data">[N]</span> requests/day at <span class="needs-data">[X]</span> ms p95.</li>
-            <li>Cut SQL Server and MySQL query times from <span class="needs-data">[X]</span> to <span class="needs-data">[Y]</span> ms under peak load through indexing and query restructuring.</li>
+            <li>Led cross-platform mobile delivery in Flutter and React Native, shipping production apps to iOS and Android from shared codebases.</li>
+            <li>Built backend systems in .NET and Spring Boot serving high-concurrency workloads.</li>
+            <li>Optimized SQL Server and MySQL query performance under peak load through indexing and query restructuring.</li>
             <li>Lead engineer and solution architect on DDLP, a cross-platform learning platform — sole technical authority for the SRS, architecture document, and end-to-end delivery.</li>
           </ul>
         </div>
@@ -233,7 +198,7 @@
             <span class="dates">Feb 2018 – Jan 2021</span>
           </div>
           <ul>
-            <li>Backend services and Android applications in Java and Kotlin, supporting <span class="needs-data">[N]</span> concurrent users; designed the API layer between backend and mobile clients.</li>
+            <li>Backend services and Android applications in Java and Kotlin; designed the API layer between backend services and mobile clients.</li>
           </ul>
         </div>
 
@@ -262,9 +227,8 @@
           <span class="role">LLM Clinical Documentation</span>
           <p>
             Owned the pipeline end to end — audio capture in Flutter, through transcription and structured
-            clinical extraction, to the clinician review-and-sign-off UI. Cut documentation time by ~70% across
-            <span class="needs-data">[N]</span> clinicians. Built the evaluation harness that gated every prompt
-            and model change, because in this domain a hallucinated line is a patient-safety event.
+            clinical extraction, to the clinician review-and-sign-off UI. Cut documentation time by ~70%,
+            measured from product analytics on writing time per session. In active use by 100+ clinicians.
           </p>
           <div class="chips">
             <span class="chip">Flutter</span><span class="chip">.NET</span><span class="chip">OpenAI</span><span class="chip">Claude</span><span class="chip">SQL Server</span>
@@ -277,8 +241,9 @@
           <p>
             Wrote the capture and filter engines natively on both platforms behind a single Dart interface —
             edge detection, perspective correction, on-device OCR — after no existing plugin met the accuracy
-            bar. AES-256 at rest. Live on Google Play:
-            <span class="needs-data">[STORE LINK · rating · installs]</span>. iOS in final release.
+            bar. AES-256 at rest.
+            <a href="https://play.google.com/store/apps/details?id=com.scanner.scanleap.scanleap_flutter" target="_blank" rel="noopener">Live on Google Play</a>;
+            iOS build in progress.
           </p>
           <div class="chips">
             <span class="chip">Flutter</span><span class="chip">Kotlin</span><span class="chip">Swift</span><span class="chip">OCR</span>
@@ -290,9 +255,8 @@
           <span class="role">MedChois · PrimaryCare · MyClinic</span>
           <p>
             Designed the microservices backend and SignalR real-time layer behind three live platforms, letting
-            consultation and media services scale independently of the core API.
-            <span class="needs-data">[N]</span> concurrent consultations at peak,
-            <span class="needs-data">[uptime]</span>% availability.
+            consultation and media services scale independently of the core API. Built the shared mobile
+            components they run on — calling, chat, document detection and filters.
           </p>
           <div class="chips">
             <span class="chip">ASP.NET Core</span><span class="chip">Microservices</span><span class="chip">SignalR</span><span class="chip">Flutter</span>
