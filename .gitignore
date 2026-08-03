@@ -3,6 +3,12 @@ RESUME_HERE.md
 Waqar_Ahmad_CV_revised.md
 Waqar_Career_Strategy.md
 
+# Career strategy working folder. MUST stay ignored: this repo is served by
+# GitHub Pages from the root of main, and there is no .nojekyll, so anything
+# committed here would be publicly readable at
+# rwaqar960.github.io/resume/docs/ — including the candid self-assessment.
+docs/
+
 # OS
 .DS_Store
 Thumbs.db
