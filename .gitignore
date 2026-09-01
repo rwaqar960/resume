@@ -15,3 +15,12 @@ Thumbs.db
 
 # Original unprocessed photo (using assets/img/profile.png instead)
 image_nskteqnskteqnskt.png
+
+# Upwork / Toptal planning docs — same reasoning as docs/ above. This repo is
+# public and served from the root of main, so anything committed here is
+# readable at rwaqar960.github.io/resume/. These contain rate tactics, the
+# candid profile assessment and the target-employer list.
+Waqar_Target_Companies.md
+Waqar_Upwork_*.md
+Waqar_Upwork_*.html
+myupworkprofile/
