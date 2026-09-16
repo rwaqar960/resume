@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resume — Waqar Ahmad · Senior Mobile Engineer</title>
-<meta name="description" content="Waqar Ahmad — Senior Mobile Engineer. Flutter, React Native and native Android/iOS platform engineering, with backend (.NET/ASP.NET Core) and applied AI/LLM integration in healthcare.">
+<meta name="description" content="Waqar Ahmad — Senior Mobile Engineer. Flutter and React Native cross-platform delivery, with native Android/Kotlin and iOS/Swift engineering when the abstraction isn't enough.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,12 +45,13 @@
   .r-work li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
 
   /* Categorized skills */
-  .skill-tier { display: grid; grid-template-columns: 132px 1fr; gap: 10px 16px; margin-bottom: 12px; align-items: start; }
+  .skill-tier { display: grid; grid-template-columns: 150px 1fr; gap: 10px 16px; margin-bottom: 12px; align-items: start; }
   .skill-tier .tier {
     font-family: var(--font-mono); font-size: 0.76rem; text-transform: uppercase;
     letter-spacing: 0.04em; color: var(--accent-2); padding-top: 2px;
   }
   .skill-tier .items { color: var(--text-dim); font-size: 0.92rem; line-height: 1.6; }
+  .skill-tier.primary .items { color: var(--text); font-size: 0.95rem; }
   @media (max-width: 560px) { .skill-tier { grid-template-columns: 1fr; gap: 2px; } }
 
   @media print {
@@ -89,16 +90,15 @@
   <div class="resume-card glass">
   <div class="resume-header">
     <h1>Waqar Ahmad</h1>
-    <div class="role">Senior Mobile Engineer | Flutter &amp; Cross-Platform Architecture | Native Android/iOS | AI-Powered Mobile Apps</div>
+    <div class="role">Senior Mobile Engineer — Flutter &amp; React Native, with Native Android/iOS Engineering</div>
     <p class="pitch">
-      I work at the layer most mobile developers don't touch: native platform engines under a shared Flutter/Dart
-      interface, and production apps in React Native and native Android/Kotlin alongside it. My focus is mobile
-      architecture end to end — from capture and on-device processing to release engineering — most recently in
-      healthcare, where I built the native scanning engines behind ScanLeap and the in-app LLM pipeline behind
-      ClinixSummary.ai. I also own the backend and APIs (.NET/ASP.NET Core) these apps run on, which means I
-      design mobile products with the full stack in view rather than as a consumer of someone else's API.
-      Currently technical lead for mobile across four healthcare products at CDOXS, leading 3–4 engineers while
-      owning the Flutter codebase.
+      Cross-platform is my default, not my ceiling. I ship production apps in Flutter and React Native, and
+      drop into native Android/Kotlin and iOS/Swift when the abstraction isn't enough to hit the bar — I've
+      written native capture and image-processing engines on both platforms behind a single Dart interface
+      after no existing plugin cleared the accuracy we needed. That's the pattern across my work: own the
+      mobile architecture end to end — capture, on-device processing, release engineering — and ship it to
+      both stores. Currently technical lead for mobile across four healthcare products at CDOXS, leading 3–4
+      engineers while owning the Flutter codebase.
     </p>
     <div class="meta">
       <a href="mailto:rwaqar960@gmail.com">rwaqar960@gmail.com</a> &nbsp;·&nbsp;
@@ -131,17 +131,15 @@
 
     <div class="r-work">
       <div class="row">
-        <h3>ClinixSummary.ai — LLM Clinical Documentation</h3>
+        <h3>ClinixSummary.ai — Clinical Documentation App</h3>
       </div>
-      <span class="tech">Flutter · Android · iOS · OpenAI &amp; Claude APIs · .NET / ASP.NET Core</span>
+      <span class="tech">Flutter · Android · iOS</span>
       <ul>
-        <li>Owned the mobile app end to end — in-app audio capture in Flutter, through transcription and
-            structured clinical extraction, to the clinician review-and-sign-off UI.</li>
-        <li>Built the companion native Android and iOS apps, extending the platform to clinicians working away
+        <li>Owned the mobile app end to end — in-app audio capture in Flutter, through to the clinician
+            review-and-sign-off UI, wired to a transcription and clinical-extraction pipeline.</li>
+        <li>Built the companion native Android and iOS apps, extending the product to clinicians working away
             from a desk.</li>
-        <li>Cut clinician documentation time by ~70%, measured from product analytics on writing time per
-            session.</li>
-        <li>In active use by 100+ clinicians.</li>
+        <li>In active use by 100+ clinicians; cut documentation time by ~70% per product analytics.</li>
       </ul>
     </div>
 
@@ -149,12 +147,12 @@
       <div class="row">
         <h3>Telemedicine Suite — MedChois · PrimaryCare · MyClinic</h3>
       </div>
-      <span class="tech">Flutter · SignalR · ASP.NET Core · Microservices · SQL Server</span>
+      <span class="tech">Flutter · shared mobile component library</span>
       <ul>
         <li>Built the shared mobile components three live telemedicine products run on — audio/video calling,
             chat, document detection and image filters — written once and reused across the suite.</li>
-        <li>Designed the microservices backend and SignalR real-time layer behind them, letting consultation
-            and media services scale independently of the core API.</li>
+        <li>Backed by a real-time (SignalR) and microservices layer I also designed, so consultation and media
+            services scale independently of the core API.</li>
       </ul>
     </div>
   </div>
@@ -172,12 +170,10 @@
         <li>Built the reusable mobile components the team now builds on — audio/video call integration, chat,
             document detection models, and image filters — written once and shipped across multiple
             products.</li>
-        <li>Shipped ClinixSummary.ai and ScanLeap end to end, including both companion mobile apps — see
-            Selected Work above.</li>
+        <li>Shipped ClinixSummary.ai and ScanLeap end to end, including both companion native mobile apps —
+            see Selected Work above.</li>
         <li>Introduced the delivery process now used on every major project: SOPs, daily standups, progress
-            tracking, QA and evaluation pipelines, and per-project CI/CD.</li>
-        <li>Also own backend architecture and technical decisions across the four products, including SignalR
-            real-time integration for live patient–provider consultations.</li>
+            tracking, and per-project CI/CD.</li>
       </ul>
     </div>
 
@@ -186,13 +182,11 @@
       <ul>
         <li>Led cross-platform mobile delivery in Flutter and React Native, shipping production apps to iOS
             and Android from shared codebases.</li>
-        <li>Shipped three healthcare products from 2023 — a telemedicine platform with real-time audio/video
-            consultations, a pharmacy ordering and consultation app, and a cycle-tracking app — in Flutter and
-            React Native over an ASP.NET Core backend.</li>
-        <li>Lead engineer and solution architect on DDLP, a cross-platform learning platform — sole technical
-            authority for the SRS, architecture document, and end-to-end delivery.</li>
-        <li>Built backend systems in .NET and Spring Boot serving high-concurrency workloads, and optimized
-            SQL Server and MySQL query performance under peak load.</li>
+        <li>Shipped three healthcare products from 2023 in Flutter and React Native — a telemedicine platform
+            with real-time audio/video consultations, a pharmacy ordering and consultation app, and a
+            cycle-tracking app.</li>
+        <li>Lead engineer and solution architect on DDLP, a cross-platform learning platform — owned the
+            mobile architecture end to end alongside the SRS and technical delivery.</li>
       </ul>
     </div>
 
@@ -215,33 +209,21 @@
 
   <div class="resume-section">
     <h2>Technical Skills</h2>
-    <div class="skill-tier">
+    <div class="skill-tier primary">
       <div class="tier">Cross-Platform</div>
-      <div class="items">Flutter &amp; Dart (primary) · React Native (production) · shared codebase / mobile architecture</div>
+      <div class="items">Flutter &amp; Dart (primary) · React Native (production) · shared-codebase strategy · mobile architecture &amp; release engineering</div>
     </div>
-    <div class="skill-tier">
+    <div class="skill-tier primary">
       <div class="tier">Native</div>
-      <div class="items">Android / Kotlin / Java · Swift / iOS · platform channels &amp; native module development</div>
+      <div class="items">Android / Kotlin / Java · Swift / iOS · platform channels &amp; native module development · on-device OCR &amp; image processing</div>
     </div>
     <div class="skill-tier">
-      <div class="tier">Mobile Systems</div>
-      <div class="items">On-device OCR &amp; image processing · audio/video calling · release engineering · app-store delivery (Google Play, iOS)</div>
+      <div class="tier">Delivery</div>
+      <div class="items">Google Play &amp; App Store release engineering · CI/CD for mobile · production ownership at scale (100+ active users)</div>
     </div>
     <div class="skill-tier">
-      <div class="tier">AI</div>
-      <div class="items">In-app LLM integration · OpenAI &amp; Claude APIs · AI-powered clinical mobile features</div>
-    </div>
-    <div class="skill-tier">
-      <div class="tier">Backend &amp; APIs</div>
-      <div class="items">C# · .NET / ASP.NET Core · REST APIs · Microservices · SignalR · Spring Boot</div>
-    </div>
-    <div class="skill-tier">
-      <div class="tier">Databases</div>
-      <div class="items">SQL Server · PostgreSQL · MySQL</div>
-    </div>
-    <div class="skill-tier">
-      <div class="tier">DevOps / Cloud</div>
-      <div class="items">CI/CD · Docker · Azure · AWS</div>
+      <div class="tier">Also</div>
+      <div class="items">.NET / ASP.NET Core backend integration · LLM/AI features (OpenAI &amp; Claude APIs) · SQL Server, PostgreSQL</div>
     </div>
   </div>
 
